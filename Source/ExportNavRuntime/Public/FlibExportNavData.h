@@ -35,13 +35,13 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure,Category="ExportNav")
 		static bool IsValidNavigationPointInNavObj(class UdtNavMeshWrapper* InDtNavObject ,const FVector& Point, const FVector InExtern = FVector::ZeroVector);
 
-	UFUNCTION(BlueprintCallable,meta=(AutoCreateRefTerm="InStart,InEnd"))
+	UFUNCTION(BlueprintCallable,meta=(AutoCreateRefTerm="InStart,InEnd"), Category = "FindDetourPathFromGameAxisByNavObject")
 		static bool FindDetourPathFromGameAxisByNavObject(class UdtNavMeshWrapper* InDtNavObject, const FVector& InStart, const FVector& InEnd, const FVector& InExternSize, TArray<FVector>& OutPaths);
-	UFUNCTION(BlueprintCallable, meta = (AutoCreateRefTerm = "InStart,InEnd"))
+	UFUNCTION(BlueprintCallable, meta = (AutoCreateRefTerm = "InStart,InEnd"), Category = "FindDetourPathFromRecastAxisByNavObject")
 		static bool FindDetourPathFromRecastAxisByNavObject(class UdtNavMeshWrapper* InDtNavObject, const FVector& InStart, const FVector& InEnd, const FVector& InExternSize, TArray<FVector>& OutPaths);
-	UFUNCTION(BlueprintCallable, meta = (AutoCreateRefTerm = "InStart,InEnd"))
+	UFUNCTION(BlueprintCallable, meta = (AutoCreateRefTerm = "InStart,InEnd"), Category = "FindDetourPathByEngineNavMesh")
 		static bool FindDetourPathByEngineNavMesh(const FVector& InStart, const FVector& InEnd, const FVector& InExternSize, TArray<FVector>& OutPaths);
-	UFUNCTION(BlueprintCallable, meta = (AutoCreateRefTerm = "InOrigin,InRedius"))
+	UFUNCTION(BlueprintCallable, meta = (AutoCreateRefTerm = "InOrigin,InRedius"), Category = "GetRandomPointByNavObject")
 		static bool GetRandomPointByNavObject(class UdtNavMeshWrapper* InDtNavObject, const FVector& InOrigin, const FVector& InRedius, FVector& OutPoint);
 		
 	static bool FindDetourPathByRecastAxis(dtNavMesh* InNavMesh, const FVector& InStart, const FVector& InEnd, const FVector& ExternSize, TArray<FVector>& OutPaths);
@@ -51,12 +51,12 @@ public:
 
 	static FString ConvPath_Slash2BackSlash(const FString& InPath);
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "FindPathing")
 	static FVector Recast2UnrealPoint(const FVector& Vector);
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "FindPathing")
 	static FVector Unreal2RecastPoint(const FVector& Vector);
 
 
-	UFUNCTION(BlueprintCallable,meta=(WorldContext="WorldContextObject",CallableWithoutWorldContext))
+	UFUNCTION(BlueprintCallable,meta=(WorldContext="WorldContextObject",CallableWithoutWorldContext), Category = "FindPathing")
 		static float FindDistanceToWall(UObject* WorldContextObject, const FVector& StartLoc);
 };

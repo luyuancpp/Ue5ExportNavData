@@ -27,7 +27,7 @@ public:
 
 	virtual bool ShouldTickIfViewportsOnly()const override;
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "UpdatePathing")
 	void UpdatePathing();
 	
 #if WITH_EDITOR

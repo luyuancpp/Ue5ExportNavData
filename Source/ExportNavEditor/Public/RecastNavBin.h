@@ -33,9 +33,9 @@ public:
 	UFUNCTION(BlueprintCallable,CallInEditor,Category="ImpoerNavData")
 	void ImportNavBin();
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "GetDtNavMesh")
 	UdtNavMeshWrapper* GetDtNavMesh()const;
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "GetFindPathExternSize")
 	FVector GetFindPathExternSize()const;
 	
 

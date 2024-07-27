@@ -46,7 +46,7 @@ public class ExportNavEditor : ModuleRules
 				"Slate",
 				"SlateCore",
 				"NavigationSystem",
-				"NavMesh",
+				"Navmesh",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
